@@ -1,0 +1,37 @@
+{
+    "name": "Crawler",
+    "version": "0.0.0.1",
+    "manifest_version": 2,
+    "minimum_chrome_version": "26",
+    "description": "A minimal extension web page data collector for Chrome.",
+
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_title": "Crawler",
+        "default_popup": "popup.html"
+    },
+    "content_scripts":[{
+        "matches":["http://*/*", "https://*/*"],
+        "css": [ "css/crawler.css" ],
+        "js":[
+            "js/crawler.js"
+        ],
+        "all_frames":true
+    }],
+    "web_accessible_resources":[
+        "css/*",
+        "js/*",
+        "lib/*",
+        "images/*"
+    ]
+}
