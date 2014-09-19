@@ -28,6 +28,17 @@ chrome.contextMenus.create({
     }
 });
 
+chrome.contextMenus.create({
+    title: 'Run this snippet',
+    contexts: ['selection'],
+    onclick: function (evt, tab) {
+        var info = evt.selectionText;
+        if(info){}
+        else{}
+        executeTabFunction(tab.id,"openwin",[info]);
+    }
+});
+
 function executeTabFunction(tabId, functionName, params){
     chrome.tabs.executeScript(tabId,{
         code: functionName + "('" + params.join("','") + "')"

@@ -14,7 +14,7 @@
     }
 });*/
 
-var rightClickedElement;
+var rightClicke dElement;
 (function init(){
     document.addEventListener("mousedown",function(e){
         if(e.button === 2){
@@ -24,7 +24,8 @@ var rightClickedElement;
 })();
 
 function collectPersistentInfo(info){
-    console.log(rightClickedElement.innerHTML);
+    var path = Xpath.getElementXPath(rightClickedElement);
+    console.log(rightClickedElement.innerText,path);
 }
 
 function collectTemporaryInfo(info){

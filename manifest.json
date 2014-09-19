@@ -24,7 +24,9 @@
         "matches":["http://*/*", "https://*/*"],
         "css": [ "css/crawler.css" ],
         "js":[
-            "js/crawler.js"
+            "js/crawler.js",
+            "lib/xpath.js",
+            "lib/utils.js"
         ],
         "all_frames":true
     }],
