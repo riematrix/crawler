@@ -1,0 +1,129 @@
+p,i,label{
+    font-size: inherit;
+}
+label{
+    font-size: 14px;
+}
+#lightbox{
+    visibility:hidden;
+    position:absolute;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e6e6e6),
+    to(#e1e1e1));
+    color:white;
+    z-index:100;
+    width: 400px;
+    min-height:70px;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 3px #dedede;
+    font-family:  'Microsoft YaHei', Arial, Tahoma, Verdana, SimSun;
+}
+
+.dimmer{
+    background: #999999;
+    position: absolute;
+    opacity: .7;
+    top: 0;
+    z-index:99;
+}
+
+.lightbox-header{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    margin-left: -5px;
+    color: #666;
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 5px;
+    font-family:  'Microsoft YaHei', Arial, Tahoma, Verdana, SimSun;
+}
+
+.content{
+    color: #000000;
+    font-size: 15px;
+}
+
+.content p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.lightbox-bar{
+    float: right;
+    margin-right: -15px;
+    margin-bottom: -10px;
+}
+.lightbox-button{
+    margin: 3px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border-right: 2px;
+    border-bottom: 2px;
+    padding: 2px 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.lightbox-confirm{
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#5bd4fa),
+    to(#1bbdf0) );
+}
+.lightbox-confirm:hover{
+    color: white;
+    background: rgb(65, 202, 245);
+    text-decoration: none;
+}
+.lightbox-cancel{
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f16e8d),
+    to(#e61a4b) );
+}
+.lightbox-cancel:hover{
+    color: white;
+    background: rgb(248, 101, 136);
+    text-decoration: none;
+}
+.invisiable{
+    display: none;
+}
+
+.existed{
+    /*background: #ffff00;*/
+    background: -webkit-linear-gradient(top, #ff9999, #ffcc99);
+}
+div .divPuckerBody textarea.existed{
+    background: -webkit-linear-gradient(top, #ff9999, #ffcc99);
+}
+
+.inspect-decorator{
+    background: -webkit-linear-gradient(top, #cccccc, #cdcdcd);
+}
+.inspect-decorator.existed-active{
+    background: -webkit-linear-gradient(top, #ffff00, #ffff00);
+}
+div .divPuckerBody textarea.existed-active{
+    background: -webkit-linear-gradient(top, #ffff00, #ffff00);
+}
+
+.top-tip{
+    position:absolute;
+    color: #ffffff;
+    top: 0;
+    font-size: 48px;
+    width: 680px;
+    background: #888;
+    left: 530px;
+    opacity: 0.4;
+    display: block;
+    text-align: center;
+}
+.top-tip:hover{
+    opacity: 1;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.fade-out{
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: all 2s ease-in-out;
+}

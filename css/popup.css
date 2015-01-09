@@ -1,0 +1,197 @@
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotateY(0deg);
+    }
+    to{
+        -webkit-transform: rotateY(360deg);
+    }
+}
+
+body{
+    width: 200px;
+    height: 36px;
+    background-color: #d5d5d5;
+    padding: 0;
+    margin: 0;
+}
+div.operator{
+    font-size: 14px;
+    font-family: arial;
+    font-weight: bold;
+    background: #DDE4E3 no-repeat ;
+    border-radius: 3px;
+    margin: 4px 3px;
+    padding: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+div.operator:hover{
+    cursor: pointer;
+    background-color: #F9FEFF;
+    /*box-shadow: #999 1px 2px 3px;*/
+}
+.operator .operator-target{
+    background: no-repeat ;
+    padding-left: 33px;
+    line-height: 28px;
+    height: 28px;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.8;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+}
+.operator .operator-target:before
+{
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 0;
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+.operator:hover > span
+{
+    opacity: 1;
+}
+.operator:hover .operator-target:before
+{
+    /*-webkit-animation: rotating 3s linear infinite;*/
+    background-size: 28px 28px;
+    opacity: 1;
+}
+.sub-operator{
+    display: none;
+    list-style:none;
+    font-weight:bold;
+    color:#303133;
+    padding:0;
+    margin:0;
+}
+.sub-operator li{
+    padding:0;
+    margin:0;
+}
+#expand{
+}
+.download .operator-target:before{
+    background-image: url("images/Download.svg");
+}
+#inspect .operator-target:before{
+    background-image: url("images/Magnifying.svg");
+}
+#import_config .operator-target:before{
+    background-image: url("images/YouVersion.svg");
+}
+#export_config .operator-target:before{
+    background-image: url("images/Pinboard.svg");
+}
+#import_template .operator-target:before{
+    background-image: url("images/WordPress.svg");
+}
+
+.operator:hover .operator-operation{
+    background: #666666;
+}
+.operator-operation{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: fixed;
+    border-radius: 15px;
+    background-color: #DDE4E3;
+    opacity: 0.3;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 6px;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+.operator-operation:hover{
+    width: 60px;
+    height: 28px;
+    opacity: 1;
+    margin-left: -32px;
+    margin-top: 1px;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.mini-icos{
+    margin: 0;
+    padding: 0;
+}
+.operator-operation:hover .mini-ico{
+    width: 16px;
+    -webkit-transform: scale(1,1);
+    -webkit-transition: all 0.4s ease-in-out;
+}
+.mini-ico{
+    margin-top: 6px;
+    margin-right: 5px;
+    position: relative;
+    background: no-repeat center center;
+    display: inline-block;
+    width: 0;
+    height: 16px;
+    border-bottom: 3px solid transparent;
+    border-left: 1px solid transparent;
+    -webkit-transform: scale(0,1);
+    -webkit-transition: all 0.4s ease-in-out;
+}
+.mini-ico:last-child{
+    margin-right: 0;
+}
+.mini-ico:hover{
+    border-bottom: 3px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+.mini-ico.modify{
+    background-image: url("images/pen_16x16.png");
+}
+.mini-ico.delete{
+    background-image: url("images/x_14x14.png");
+}
+.mini-ico.bind{
+    background-image: url("images/pin_16x16.png");
+}
+
+.footer{
+    padding-top: 8px;
+}
+.footer div{
+    margin: 0 auto;
+    /*text-align: center;*/
+    text-align: right;
+    padding-right: 10px;
+}
+.links{
+    background: no-repeat ;
+    background-size: 26px 26px;
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    opacity: 0.5;
+    margin-bottom: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.links:hover{
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    opacity: 1;
+}
+.feedback{
+    background-image: url("images/Email.svg");
+}
+.github{
+    background-image: url("images/GitHub.svg");
+}
+.help{
+    background-image: url("images/Help.svg");
+}
