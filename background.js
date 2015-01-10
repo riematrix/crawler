@@ -2,7 +2,7 @@
  * Created by Administrator on 2014/9/4.
  */
 
-var backgroungConfig = {
+var backgroundConfig = {
     enableUpdateVars: true
 };
 
@@ -24,7 +24,7 @@ MsgHandler = {
     updateTargetsContextMenus: function(data,sender,sendResponse){
         chrome.contextMenus.removeAll();
         initStaticContextMenus();
-        if(!data || JSON.stringify(data) === "{}" || !backgroungConfig.enableUpdateVars) {
+        if(!data || JSON.stringify(data) === "{}" || !backgroundConfig.enableUpdateVars) {
 
         }else{
             initVariableContextMenus(data);
@@ -47,6 +47,7 @@ $T.loadResource();
 
 var contexts = ["page","link","editable"];
 function initStaticContextMenus(){
+    console.log("initStaticContextMenus")
     chrome.contextMenus.create({
         title: $T("data.collect.target.add"),
         contexts: contexts,

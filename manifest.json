@@ -6,7 +6,11 @@
     "description": "A minimal extension web page data collector for Chrome.",
 
     "background": {
-        "scripts": ["background.js"],
+        "scripts": [
+            "js/common.js",
+            "lib/translate.js",
+            "background.js"
+        ],
         "persistent": true
     },
     "permissions": [
@@ -24,9 +28,14 @@
         "matches":["http://*/*", "https://*/*"],
         "css": [ "css/crawler.css" ],
         "js":[
-            "js/crawler.js",
+            "js/common.js",
+            "lib/domain_monitor.js",
             "lib/xpath.js",
-            "lib/utils.js"
+            "lib/filesystem.js",
+            "lib/translate.js",
+            "lib/utils.js",
+            "lib/lightbox.js",
+            "js/crawler.js"
         ],
         "all_frames":true
     }],

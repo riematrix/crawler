@@ -1,6 +1,12 @@
 /**
  * Created by Stanley Zhou on 2014/9/5.
  */
+
+var watcher = new DomainMonitor();
+if(!watcher.check(location.host)){
+    throw new Error("domain " + location.host + " is not allowed to execute, script will exit");
+}
+
 /*chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
  console.log(request)
  switch (request.method) {
@@ -251,7 +257,7 @@ var fs = new Filesystem(PERSISTENT, 5 * 1024 * 1024),
             UserConfig = JSON.parse(data);
             updateCollectTargets()
         }).fail(function(e) {
-            console.log(e.message + $T("filesystem.create.message", [configFileName]));
+            console.log(e && e.message + $T("filesystem.create.message", [configFileName]));
             if (FileError.NOT_FOUND_ERR == e.code) {
                 fs.createFile(configFileName, "{}");
                 updateCollectTargets()
@@ -287,6 +293,7 @@ var fs = new Filesystem(PERSISTENT, 5 * 1024 * 1024),
     })
 })();
 function updateCollectTargets() {
+    console.log("updateCollectTargets")
     for (var b in UserConfig) {
         var e = UserConfig[b];
         if (typeof e === "object" && e.include_images) {

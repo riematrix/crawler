@@ -4,6 +4,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     chrome.tabs.executeScript(null, {code: "collectData();",allFrames: false});
 
+    document.getElementById("monitor_toggle").addEventListener("click",function(){
+        chrome.tabs.executeScript(null, {code: "watcher.approve();",allFrames: false});
+    });
+
     document.getElementById("inspect").addEventListener("click", function() {
         chrome.tabs.executeScript(null, {code: "inspectToSelectElement();",allFrames: false});
         window.close()
